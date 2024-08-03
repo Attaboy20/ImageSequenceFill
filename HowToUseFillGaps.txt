@@ -1,0 +1,8 @@
+Firstly, copy and paste the python script into the directory you want to fill gaps.
+Then, edit the python file so that the name and numbering scheme matches the scheme of the 
+files. (Ex: change match = re.match(r"test(\d+)\.png", file) to match = re.match(r"Rendered_image(\d+)\.png", file))
+Change the directories as well in fill_gaps function, and change the first file's numbering to match 
+Then open Anaconda Script, create a pillow env (conda create -n pillow-test pillow) and activate it
+(conda activate pillow-test)
+move to directory if not already in it, then run the program (python fill_gaps.py)
+it should have added empty image files.
