@@ -11,3 +11,11 @@ files. (Ex: change match = re.match(r"default_image_name(\d+)\.png", file) to ma
 Change the directories as well in the fill_gaps function, and change the first file's name and numbering to match your desired format/name
 Then run the program (python fill_gaps.py)
 It should have added empty image files in between the rendered images.
+
+
+### Why is this necessary?
+Most programs render images in sequential numbers (e.g., 0001, 0002, and so on), making it easy to import these sequences into software like Premiere or After Effects. However, there are scenarios where you might want to render image sequences out of order or skip frames to reduce render times. For instance, when working with audio and creating animations that sync with specific audio segments, this can result in gaps in your rendered image sequence (e.g., missing frames between 0234.png and 0555.png).
+
+When an image sequence has such gaps, programs like Premiere and After Effects struggle to recognize and import them seamlessly. This often requires tedious renaming of files, which can disrupt the timing, especially if other clips or audio files are using the same numbering system.
+
+This program addresses this issue by creating blank images to fill those gaps, ensuring the sequence remains intact and retains accurate timing information.
