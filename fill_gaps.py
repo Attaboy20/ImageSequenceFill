@@ -6,7 +6,7 @@ def get_image_numbers(directory):
     files = os.listdir(directory)
     image_numbers = []
     for file in files:
-        match = re.match(r"Metacritic rant(\d+)\.png", file)
+        match = re.match(r"default_image_name(\d+)\.png", file)#Change this to your image sequence name
         if match:
             image_numbers.append(int(match.group(1)))
     return sorted(image_numbers)
@@ -24,12 +24,12 @@ def fill_gaps(directory, image_numbers, gaps):
         return
 
     # Determine the size of the blank images using the first image
-    first_image_path = os.path.join(directory, f"Metacritic rant{image_numbers[0]}.png")
+    first_image_path = os.path.join(directory, f"name_of_first_image.png")
     with Image.open(first_image_path) as img:
         size = img.size
 
     for gap in gaps:
-        file_path = os.path.join(directory, f"Metacritic rant{gap}.png")
+        file_path = os.path.join(directory, f"name_of_desired_image{gap}.png") #Change this to your image sequence name
         create_blank_image(size, file_path)
         print(f"Created blank image for missing file: {file_path}")
 
