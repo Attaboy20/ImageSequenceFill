@@ -4,7 +4,7 @@ If you have an image sequence that is missing frames (for example test101.png-te
 ## Requirments
 You'll need to make sure python is installed and you have a working pillow or PIL installation.
 
-#How to run
+# How to run
 Firstly, copy and paste the python script into the directory you want to fill the gaps.
 Then, edit the python file so that the name and numbering scheme matches the scheme of the 
 files. (Ex: change match = re.match(r"default_image_name(\d+)\.png", file) to match = re.match(r"name_of_desired_image(\d+)\.png", file))
